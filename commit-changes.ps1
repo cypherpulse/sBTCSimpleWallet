@@ -16,7 +16,35 @@ $allFiles = ($untrackedFiles + $modifiedFiles) | Select-Object -Unique
 Write-Host "All frontend files to commit: $($allFiles -join ', ')"
 
 # Comprehensive commit message for sBTC Simple Wallet frontend updates
-$commitMessage = "Updated sBTC Simple Wallet frontend - decentralized sBTC management with Stacks blockchain integration, React, TypeScript, and modern UI components. Features wallet connection, balance display, deposit/withdraw transactions."
+$commitMessage = @'
+feat: Complete sBTC Simple Wallet frontend integration
+
+- Integrate Stacks blockchain with React frontend
+- Add wallet connection using @stacks/connect v8.2.4
+- Implement sBTC balance fetching via Stacks API
+- Create deposit/withdraw transaction forms
+- Add real-time balance updates with @tanstack/react-query
+- Configure WalletConnect for mobile wallet support
+- Update README with architecture diagrams and screenshots
+- Fix CSS import order and styling issues
+- Implement proper wallet disconnect functionality
+- Add environment variables for secure configuration
+- Create comprehensive project documentation
+
+Dependencies:
+- @stacks/connect: ^8.2.4 (wallet integration)
+- @stacks/network: ^6.17.0 (network config)
+- @stacks/transactions: ^6.17.0 (contract calls)
+- @tanstack/react-query: ^5.83.0 (data fetching)
+
+Components:
+- ConnectWallet: Secure wallet authentication
+- BalanceDisplay: Real-time sBTC balance
+- DepositForm/WithdrawForm: Transaction handling
+- Contract integration with sbtc-simple-wallet.clar
+
+Closes wallet connection, balance display, and transaction issues.
+'@
 
 # Commit each file individually
 foreach ($file in $allFiles) {
