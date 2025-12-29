@@ -8,7 +8,7 @@
 [![Stacks](https://img.shields.io/badge/stacks-2.0-yellow)](https://stacks.co/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![sBTC Wallet Screenshot 1](sbtcwallet1.png)
+![sBTC Wallet Screenshot 1](assets/sbtcwallet1.png)
 
 A decentralized wallet application for managing sBTC (Stacks Bitcoin) built on the Stacks blockchain using Clarity smart contracts. This project provides a secure, user-friendly interface for interacting with Bitcoin-backed assets on the Stacks ecosystem.
 
@@ -40,7 +40,7 @@ The sBTC Simple Wallet is a full-stack decentralized application that enables us
 
 The project demonstrates best practices for DeFi application development on the Stacks ecosystem, including secure wallet connections, transaction management, and real-time blockchain state updates.
 
-![sBTC Wallet Screenshot 2](sbtcwallet2.png)
+![sBTC Wallet Screenshot 2](assets/sbtcwallet2.png)
 
 ## Architecture
 
