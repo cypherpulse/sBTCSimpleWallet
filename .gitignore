@@ -168,3 +168,4 @@ bitcoin-regtest/
 # Contract deployment artifacts
 artifacts/
 *.clar.map
+*.ps1

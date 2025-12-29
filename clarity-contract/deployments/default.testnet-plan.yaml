@@ -9,6 +9,13 @@ plan:
     - id: 0
       transactions:
         - contract-publish:
+            contract-name: sbtc-token
+            expected-sender: STGDS0Y17973EN5TCHNHGJJ9B31XWQ5YXBQ0KQ2Y
+            cost: 18350
+            path: contracts/sbtc-token.clar
+            anchor-block-only: true
+            clarity-version: 2
+        - contract-publish:
             contract-name: sbtc-simple-wallet
             expected-sender: STGDS0Y17973EN5TCHNHGJJ9B31XWQ5YXBQ0KQ2Y
             cost: 18350
