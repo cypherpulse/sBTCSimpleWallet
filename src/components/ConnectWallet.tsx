@@ -82,10 +82,10 @@ const ConnectWallet = ({ onConnect, onDisconnect }: ConnectWalletProps) => {
 
   if (connected && address) {
     return (
-      <div className="flex items-center gap-4">
-        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary/50 border border-border">
+      <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+        <div className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg bg-secondary/50 border border-border text-xs sm:text-sm">
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-sm font-medium text-foreground">
+          <span className="font-medium text-foreground">
             {truncateAddress(address)}
           </span>
         </div>
@@ -93,7 +93,7 @@ const ConnectWallet = ({ onConnect, onDisconnect }: ConnectWalletProps) => {
           variant="outline"
           size="sm"
           onClick={handleDisconnect}
-          className="border-muted-foreground/30 hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30"
+          className="border-muted-foreground/30 hover:bg-destructive/10 hover:text-destructive hover:border-destructive/30 text-xs sm:text-sm px-3 sm:px-4"
         >
           Disconnect
         </Button>
@@ -106,11 +106,14 @@ const ConnectWallet = ({ onConnect, onDisconnect }: ConnectWalletProps) => {
       onClick={handleConnect}
       disabled={isLoading}
       size="lg"
-      className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-8 py-6 text-lg rounded-xl glow-orange animate-pulse-glow transition-all duration-300 hover:scale-105"
+      className="relative overflow-hidden bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 sm:px-8 py-4 sm:py-6 text-base sm:text-lg rounded-xl glow-orange animate-pulse-glow transition-all duration-300 hover:scale-105 w-full sm:w-auto"
     >
-      <div className="flex items-center gap-3">
-        <BitcoinIcon size={28} className="text-primary-foreground" />
-        <span>{isLoading ? 'Connecting...' : 'Connect Wallet – Mobile QR Ready'}</span>
+      <div className="flex items-center justify-center gap-2 sm:gap-3">
+        <BitcoinIcon size={24} className="text-primary-foreground sm:w-7 sm:h-7" />
+        <span className="text-center">
+          {isLoading ? 'Connecting...' : 'Connect Wallet'}
+          {!isLoading && <span className="hidden sm:inline"><br />Mobile QR Ready</span>}
+        </span>
       </div>
     </Button>
   );
