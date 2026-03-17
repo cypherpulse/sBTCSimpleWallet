@@ -169,3 +169,4 @@ bitcoin-regtest/
 artifacts/
 *.clar.map
 *.ps1
+*.sh
